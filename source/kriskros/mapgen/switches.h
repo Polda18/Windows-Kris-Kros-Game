@@ -23,6 +23,7 @@
 #define SW_CAPTION            3
 #define SW_HELP               4
 #define SW_VERBOSE            5
+#define SW_FOOTER             6
 
 static enum swVal
 {
@@ -36,7 +37,9 @@ static enum swVal
 	swHelpS,
 	swHelpL,
 	swVerbS,
-	swVerbL
+	swVerbL,
+	swFootS,
+	swFootL
 };
 static std::map<std::string, swVal> mapSwVal;
 

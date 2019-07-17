@@ -2,7 +2,7 @@
  * Kris-Kros Game Kit
  *----------------------------------
  * Kris-Kros Map Generator source
- * File: convert.h
+ * File: logger.h
  *
  * Made by Marek Pol·Ëek
  * Github.com/Polda18
@@ -13,19 +13,14 @@
 
 #include <string>
 
-#ifndef CONVERT_H
-#define CONVERT_H
+#ifndef LOGGER_H
+#define LOGGER_H
 
 namespace mapgen
 {
-	namespace converter
+	namespace logger
 	{
-		int convert(bool v, bool o, bool c, bool f, bool l,
-			std::string inFname,
-			std::string outFname,
-			std::string capFname,
-			std::string ftFname,
-			std::string lang);
+		int log(std::string lFname, std::string lMsg);
 	}
 }
 

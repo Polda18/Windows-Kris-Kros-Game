@@ -12,8 +12,6 @@
  ***********************************/
 
 // Global API libraries
-#include <windows.h>
-#include <stdio.h>
 #include <iostream>
 #include <string>
 
@@ -25,6 +23,7 @@
 #include "commands.h"
 #include "convert.h"
 #include "errcodes.h"
+#include "arghdl.h"
 
 // TODO: Console API code
 int main(int argc, char **argv)
@@ -37,24 +36,43 @@ int main(int argc, char **argv)
 	std::cout << "---------------------------------------" << std::endl << std::endl;
 
 	int rCode = 0;  // Return error code (error level, begins with 0 = no error)
-	bool v, h, o, c;
-	// Switches: verbose, help, output, caption
+	bool v, h, o, c, f, l;
+	v = h = o = c = f = l = false;
+	// Switches: verbose, help, output, caption, footer
+
+	std::string outFname, hSwName, capFname, ftFname, inFname, lang;
+	lang = inFname = ftFname = capFname = hSwName = outFname = "";
+	// Arguments: language, input file, footer file, caption file, help file, output file
 
 	if(argc > 1)
 	{
-		//TODO: check arguments
-		for(int i = 1; i < argc; ++i)
+		rCode = mapgen::arghandler::handle_args(argc, argv,
+			inFname, outFname, capFname, ftFname, hSwName, lang, h, o, v, c, f, l);
+
+		// Check if there didn't occur any error
+		if(rCode == 0)
 		{
-			std::cout << "argv[" << i << "]=\"" << argv[i] << "\"" << std::endl;
+			if(h)
+			{
+				// Help switch enabled, ignore anything else
+				if(hSwName.length() > 0)
+					// Specified help file, display this one
+					display_help_option(hSwName);
+				else
+					// No help file specified, display usage help
+					display_help(argv[0]);
+			}
+			else
+				// Help switch not enabled, let's try to convert
+				rCode = mapgen::converter::convert(v, o, c, f, l,
+				inFname, outFname, capFname, ftFname, lang);
 		}
-		std::cout << "> Not implemented yet ..." << std::endl;
-		// Temporary constructor
 	}
 	else
 	{
-		// No arguments given, display help
+		// No arguments given, display usage help
 		display_help(argv[0]);
-		//display_help_option("u");  // Temporary constructor
+		//display_help_option("file");  // Temporary constructor
 	}
 
 	return rCode;

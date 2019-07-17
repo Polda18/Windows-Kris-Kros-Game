@@ -155,6 +155,29 @@ namespace mapgen
 
 				_endhelp();
 			}
+
+			void help_footer()
+			{
+				_caption("(`f` | `footer`)");
+
+				std::cout << "Use switch `f` or `footer` to add footer text file" << std::endl;
+				std::cout << "refference in the generated text map." << std::endl << std::endl;
+
+				std::cout << "Usage: `-f<footer.txt>` or `--footer=<footer.txt>`"
+					<< std::endl << std::endl;
+
+				std::cout << "Replace `<footer.txt>` with the filename of the footer" << std::endl;
+				std::cout << "text file. It will create a link in generated map poiting" << std::endl;
+				std::cout << "to the text file containing the specified footer."
+					<< std::endl << std::endl;
+
+				std::cout << "No special markup language is used in footer, it's just" << std::endl;
+				std::cout << "pure plain text. It's useful to include source of info" << std::endl;
+				std::cout << "available in your kris-kros map." << std::endl << std::endl;
+
+				_filenames();
+				_endhelp();
+			}
 			// More switches upon request
 
 			void help_undef()
@@ -168,6 +191,7 @@ namespace mapgen
 				std::cout << " -  (`l` | `lang`)" << std::endl;
 				std::cout << " -  (`c` | `caption`)" << std::endl;
 				std::cout << " -  (`v` | `verbose`)" << std::endl;
+				std::cout << " -  (`f` | `footer`)" << std::endl;
 				std::cout << " -  (`h` | `help`)" << std::endl << std::endl;
 				// More switches upon request
 
@@ -198,6 +222,9 @@ namespace mapgen
 				break;
 			case SW_VERBOSE:
 				help_verbose();
+				break;
+			case SW_FOOTER:
+				help_footer();
 				break;
 				// More switches upon request
 			default:

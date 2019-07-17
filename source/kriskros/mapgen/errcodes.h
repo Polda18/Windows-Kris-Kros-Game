@@ -21,6 +21,10 @@
 #define ERR_FILE_FORMAT_INCORRECT     5
 #define ERR_FOLDER_WRITE_PROTECTED    6
 #define ERR_FOLDER_CORRUPT            7
+#define ERR_INPUT_ARG_MISSING         8
 // Next error codes based on requests
+
+#define ERR_UNEXPECTED               99
+// Unexpected error, return code may be raised if reached in future (highly unlikely)
 
 #endif

@@ -70,6 +70,7 @@ void display_help(std::string pFpathFname)
 	std::cout << "  -cfile.txt, --caption=file.txt > Add caption text file right away" << std::endl;
 	std::cout << "                                   (default not used)" << std::endl;
 	std::cout << "  -v, --verbose                  > Verbose (detailed) output" << std::endl;
+	std::cout << "  -ffile.txt, --footer=file.txt  > Add footer text file right away" << std::endl;
 	std::cout << "  -h, --help                     > Display this usage" << std::endl;
 	std::cout << "      --help=option              > Display detailed help on specified `option`" << std::endl;
 	std::cout << "                                   (do not include preceding dashes and parms)" << std::endl << std::endl;
@@ -92,6 +93,8 @@ void display_help_option(std::string option)
 	mapSwVal["help"]     = swHelpL;
 	mapSwVal["v"]        = swVerbS;
 	mapSwVal["verbose"]  = swVerbL;
+	mapSwVal["f"]        = swFootS;
+	mapSwVal["footer"]   = swFootL;
 	// More switches upon request
 
 	switch(mapSwVal[option])
@@ -130,6 +133,13 @@ void display_help_option(std::string option)
 	case swVerbL:
 		// Switch 'verbose'
 		mapgen::helper::option_help(SW_VERBOSE);
+		break;
+	case swFootS:
+		// Switch 'f'
+		// Same as 'footer', so pass below
+	case swFootL:
+		// Switch 'footer'
+		mapgen::helper::option_help(SW_FOOTER);
 		break;
 		// More switches upon request
 	default:
