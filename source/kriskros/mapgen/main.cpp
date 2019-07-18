@@ -46,8 +46,9 @@ int main(int argc, char **argv)
 
 	if(argc > 1)
 	{
+		// Handle arguments given from command line
 		rCode = mapgen::arghandler::handle_args(argc, argv,
-			inFname, outFname, capFname, ftFname, hSwName, lang, h, o, v, c, f, l);
+			&inFname, &outFname, &capFname, &ftFname, &hSwName, &lang, &h, &o, &v, &c, &f, &l);
 
 		// Check if there didn't occur any error
 		if(rCode == 0)

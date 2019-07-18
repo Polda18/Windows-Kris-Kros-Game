@@ -22,13 +22,13 @@
 #include "arghdl.h"
 
 int mapgen::arghandler::handle_args(int argc, char **argv,
-			std::string inFname,
-			std::string outFname,
-			std::string capFname,
-			std::string ftFname,
-			std::string hSwName,
-			std::string lang,
-			bool h, bool o, bool v, bool c, bool f, bool l)
+			std::string *inFname,
+			std::string *outFname,
+			std::string *capFname,
+			std::string *ftFname,
+			std::string *hSwName,
+			std::string *lang,
+			bool *h, bool *o, bool *v, bool *c, bool *f, bool *l)
 {
 	// Initialize return code
 	int rCode = 0;
@@ -105,7 +105,7 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 		{
 		case swOutS:
 			// Switch '-o<file.txt>'; this switch is expected to contain following data
-			if(i == (argc - 1) && !h)
+			if(i == (argc - 1) && !(*h))
 			{
 				// If this is last argument and help switch is not defined, call this input error:
 				rCode = ERR_INPUT_ARG_MISSING;
@@ -126,13 +126,13 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 			}
 
 			// Enable output switch and pass argument to resolve file name
-			o = true;
-			outFname = mapgen::arghandler::argVal_resolve(rCode, SW_OUTPUT, false, argv[i]);
+			*o = true;
+			*outFname = mapgen::arghandler::argVal_resolve(rCode, SW_OUTPUT, false, argv[i]);
 			break;
 		case swOutL:
 			// Switch '--output=<file.txt>'
 			// This switch is expected to contain following data
-			if(i == (argc - 1) && !h)
+			if(i == (argc - 1) && !(*h))
 			{
 				// If this is last argument and help switch is not defined, call this input error:
 				rCode = ERR_INPUT_ARG_MISSING;
@@ -153,12 +153,12 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 			}
 
 			// Enable output switch and pass argument to resolve file name
-			o = true;
-			outFname = mapgen::arghandler::argVal_resolve(rCode, SW_OUTPUT, true, argv[i]);
+			*o = true;
+			*outFname = mapgen::arghandler::argVal_resolve(rCode, SW_OUTPUT, true, argv[i]);
 			break;
 		case swLangS:
 			// Switch '-l<cz|en>'; this switch is expected to contain following data
-			if(i == (argc - 1) && !h)
+			if(i == (argc - 1) && !(*h))
 			{
 				// If this is last argument and help switch is not defined, call this input error:
 				rCode = ERR_INPUT_ARG_MISSING;
@@ -179,12 +179,12 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 			}
 
 			// Enable lang switch and ass argument to resolve language code
-			l = true;
-			lang = mapgen::arghandler::argVal_resolve(rCode, SW_LANG, false, argv[i]);
+			*l = true;
+			*lang = mapgen::arghandler::argVal_resolve(rCode, SW_LANG, false, argv[i]);
 			break;
 		case swLangL:
 			// Switch '--lang=<cz|en>'; this switch is expected to contain following data
-			if(i == (argc - 1) && !h)
+			if(i == (argc - 1) && !(*h))
 			{
 				// If this is last argument and help switch is not defined, call this input error:
 				rCode = ERR_INPUT_ARG_MISSING;
@@ -205,12 +205,12 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 			}
 
 			// Enable lang switch and pass argument to resolve language code
-			l = true;
-			lang = mapgen::arghandler::argVal_resolve(rCode, SW_LANG, true, argv[i]);
+			*l = true;
+			*lang = mapgen::arghandler::argVal_resolve(rCode, SW_LANG, true, argv[i]);
 			break;
 		case swCapS:
 			// Switch '-c<file.txt>'; this switch is expected to contain following data
-			if(i == (argc - 1) && !h)
+			if(i == (argc - 1) && !(*h))
 			{
 				// If this is last argument and help switch is not defined, call this input error:
 				rCode = ERR_INPUT_ARG_MISSING;
@@ -231,12 +231,12 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 			}
 
 			// Enable caption switch and pass argument to resolve caption file name
-			c = true;
-			capFname = mapgen::arghandler::argVal_resolve(rCode, SW_CAPTION, false, argv[i]);
+			*c = true;
+			*capFname = mapgen::arghandler::argVal_resolve(rCode, SW_CAPTION, false, argv[i]);
 			break;
 		case swCapL:
 			// Switch '--caption=<file.txt>'; this switch is expected to contain following data
-			if(i == (argc - 1) && !h)
+			if(i == (argc - 1) && !(*h))
 			{
 				// If this is last argument and help switch is not defined, call this input error:
 				rCode = ERR_INPUT_ARG_MISSING;
@@ -257,8 +257,8 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 			}
 
 			// Enable caption switch and pass argument to resolve caption file name
-			c = true;
-			capFname = mapgen::arghandler::argVal_resolve(rCode, SW_CAPTION, true, argv[i]);
+			*c = true;
+			*capFname = mapgen::arghandler::argVal_resolve(rCode, SW_CAPTION, true, argv[i]);
 			break;
 		case swHelpS:
 			// Switch '-h'; this switch isn't expected to contain following data
@@ -289,42 +289,59 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 			}
 
 			// Enable help switch
-			h = true;
+			*h = true;
 			break;
 		case swHelpL:
 			// Switch '--help' or '--help=<switch>'; this switch is expected to contain following data
 			// This switch can be last one, it changes completely function of program
 			
 			// Enable help switch and pass argument to resolve help file query
-			h = true;
-			hSwName = mapgen::arghandler::argVal_resolve(rCode, SW_HELP, true, argv[i]);
-
-			// If help file query is not resolved and '--help' isn't exact length, this is error:
-			if(hSwName == ""
-				&& argStr.length() > argSw.length()
-				&& argStr.find("=") != argSw.length())
+			*h = true;
+			if(argStr.length() > argSw.length())
 			{
-				// It's not '--help', call for undefined switch:
-				rCode = ERR_ARG_INVALID;
-				std::string eMsg = construct_error(
-					"Invalid argument `" + argStr + "`!"
-					);
-				std::cout << eMsg << std::endl;
-
-				int logErr = mapgen::logger::log("error", eMsg);
-				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+				if(argStr.find("=") != argSw.length())
 				{
-					std::cout << construct_error("Log file or folder is write protected!") << std::endl;
-					rCode = logErr;
-				}
-				else if(logErr == ERR_FILE_CORRUPT)
-				{
-					std::cout << construct_error("Log file is corrupt!") << std::endl;
-					rCode = logErr;
+					// It's not '--help', call for undefined switch:
+					rCode = ERR_ARG_INVALID;
+					std::string eMsg = construct_error("Invalid argument `" + argStr + "`!");
+					std::cout << eMsg << std::endl;
+
+					int logErr = mapgen::logger::log("error", eMsg);
+					if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+					{
+						std::cout << construct_error("Log file or folder is write protected!") << std::endl;
+						rCode = logErr;
+					}
+					else if(logErr == ERR_FILE_CORRUPT)
+					{
+						std::cout << construct_error("Log file is corrupt!") << std::endl;
+						rCode = logErr;
+					}
+	
+					// Invalid argument is fairly reason to end process with error return code output
+					break;
 				}
 
-				// Invalid argument is fairly reason to end process with error return code output
-				break;
+				*hSwName = mapgen::arghandler::argVal_resolve(rCode, SW_HELP, true, argv[i]);
+				if(*hSwName == "")
+				{
+					// Help file query not specified, this is an error!
+					rCode = ERR_ARG_INVALID;
+					std::string eMsg = construct_error("Invalid argument `" + argStr + "`! Specify a switch to display a help!");
+					std::cout << eMsg << std::endl;
+
+					int logErr = mapgen::logger::log("error", eMsg);
+					if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+					{
+						std::cout << construct_error("Log file or folder is write protected!") << std::endl;
+						rCode = logErr;
+					}
+					else if(logErr == ERR_FILE_CORRUPT)
+					{
+						std::cout << construct_error("Log file is corrupt!") << std::endl;
+						rCode = logErr;
+					}
+				}
 			}
 
 			break;
@@ -359,7 +376,7 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 			}
 
 			// Then check for last argument and help
-			if(i == (argc - 1) && !h)
+			if(i == (argc - 1) && !(*h))
 			{
 				// If this is last argument and help switch is not defined, call this input error:
 				rCode = ERR_INPUT_ARG_MISSING;
@@ -380,11 +397,11 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 			}
 
 			// Enable verbose switch
-			v = true;
+			*v = true;
 			break;
 		case swFootS:
 			// Switch '-f<file.txt>; this switch is expected to contain following data
-			if(i == (argc - 1) && !h)
+			if(i == (argc - 1) && !(*h))
 			{
 				// If this is last argument and help switch is not defined, call this input error:
 				rCode = ERR_INPUT_ARG_MISSING;
@@ -405,12 +422,12 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 			}
 
 			// Enable footer switch and pass argument to resolve footer file name
-			f = true;
-			ftFname = mapgen::arghandler::argVal_resolve(rCode, SW_FOOTER, false, argv[i]);
+			*f = true;
+			*ftFname = mapgen::arghandler::argVal_resolve(rCode, SW_FOOTER, false, argv[i]);
 			break;
 		case swFootL:
 			// Switch '--footer=<file.txt>; this switch is expected to contain following data
-			if(i == (argc - 1) && !h)
+			if(i == (argc - 1) && !(*h))
 			{
 				// If this is last argument and help switch is not defined, call this input error:
 				rCode = ERR_INPUT_ARG_MISSING;
@@ -431,8 +448,8 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 			}
 
 			// Enable footer switch and pass argument to resolve footer file name
-			f = true;
-			ftFname = mapgen::arghandler::argVal_resolve(rCode, SW_FOOTER, true, argv[i]);
+			*f = true;
+			*ftFname = mapgen::arghandler::argVal_resolve(rCode, SW_FOOTER, true, argv[i]);
 			break;
 			// More switches upon requests
 		default:
@@ -466,10 +483,8 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 			}
 
 			// Since this is last argument, pass it to input file
-			inFname = argStr;
+			*inFname = argStr;
 		}
-
-		std::cout << "Pending ..." << std::endl;
 	}
 
 	return rCode;
@@ -482,9 +497,6 @@ std::string mapgen::arghandler::argSw_resolve(int rCode, int aType, bool argL, c
 	std::string argStr(arg);
 	// Convert char pointer to string
 
-	// Temporary line
-	std::cout << argStr << std::endl;
-	
 	switch(aType)
 	{
 	case SW_OUTPUT:

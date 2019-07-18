@@ -34,13 +34,13 @@ namespace mapgen
 		const std::string argSwFootL = "--footer=";
 		
 		int handle_args(int argc, char **argv,
-			std::string inFname,
-			std::string outFname,
-			std::string capFname,
-			std::string ftFname,
-			std::string hSwName,
-			std::string lang,
-			bool h, bool o, bool v, bool c, bool f, bool l);
+			std::string *inFname,
+			std::string *outFname,
+			std::string *capFname,
+			std::string *ftFname,
+			std::string *hSwName,
+			std::string *lang,
+			bool *h, bool *o, bool *v, bool *c, bool *f, bool *l);
 
 		std::string argSw_resolve(int rCode, int aType, bool argL, char *arg);
 		std::string argVal_resolve(int rCode, int aType, bool argL, char *arg);
