@@ -114,15 +114,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 
 				int logErr = mapgen::logger::log("error", eMsg);
 				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
-				{
-					std::cout << construct_error("Log file or folder is write protected!") << std::endl;
 					rCode = logErr;
-				}
 				else if(logErr == ERR_FILE_CORRUPT)
-				{
-					std::cout << construct_error("Log file is corrupted") << std::endl;
 					rCode = logErr;
-				}
 			}
 
 			// Enable output switch and pass argument to resolve file name
@@ -141,15 +135,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 
 				int logErr = mapgen::logger::log("error", eMsg);
 				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
-				{
-					std::cout << construct_error("Log file or folder is write protected!") << std::endl;
 					rCode = logErr;
-				}
 				else if(logErr == ERR_FILE_CORRUPT)
-				{
-					std::cout << construct_error("Log file is corrupted") << std::endl;
 					rCode = logErr;
-				}
 			}
 
 			// Enable output switch and pass argument to resolve file name
@@ -167,15 +155,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 
 				int logErr = mapgen::logger::log("error", eMsg);
 				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
-				{
-					std::cout << construct_error("Log file or folder is write protected!") << std::endl;
 					rCode = logErr;
-				}
 				else if(logErr == ERR_FILE_CORRUPT)
-				{
-					std::cout << construct_error("Log file is corrupted") << std::endl;
 					rCode = logErr;
-				}
 			}
 
 			// Enable lang switch and ass argument to resolve language code
@@ -193,15 +175,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 
 				int logErr = mapgen::logger::log("error", eMsg);
 				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
-				{
-					std::cout << construct_error("Log file or folder is write protected!") << std::endl;
 					rCode = logErr;
-				}
 				else if(logErr == ERR_FILE_CORRUPT)
-				{
-					std::cout << construct_error("Log file is corrupted") << std::endl;
 					rCode = logErr;
-				}
 			}
 
 			// Enable lang switch and pass argument to resolve language code
@@ -219,15 +195,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 
 				int logErr = mapgen::logger::log("error", eMsg);
 				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
-				{
-					std::cout << construct_error("Log file or folder is write protected!") << std::endl;
 					rCode = logErr;
-				}
 				else if(logErr == ERR_FILE_CORRUPT)
-				{
-					std::cout << construct_error("Log file is corrupted") << std::endl;
 					rCode = logErr;
-				}
 			}
 
 			// Enable caption switch and pass argument to resolve caption file name
@@ -245,15 +215,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 
 				int logErr = mapgen::logger::log("error", eMsg);
 				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
-				{
-					std::cout << construct_error("Log file or folder is write protected!") << std::endl;
 					rCode = logErr;
-				}
 				else if(logErr == ERR_FILE_CORRUPT)
-				{
-					std::cout << construct_error("Log file is corrupt!") << std::endl;
 					rCode = logErr;
-				}
 			}
 
 			// Enable caption switch and pass argument to resolve caption file name
@@ -274,15 +238,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 
 				int logErr = mapgen::logger::log("error", eMsg);
 				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
-				{
-					std::cout << construct_error("Log file or folder is write protected!") << std::endl;
 					rCode = logErr;
-				}
 				else if(logErr == ERR_FILE_CORRUPT)
-				{
-					std::cout << construct_error("Log file is corrupt!") << std::endl;
 					rCode = logErr;
-				}
 
 				// Invalid argument is fairly reason to end process with error return code output
 				break;
@@ -308,15 +266,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 
 					int logErr = mapgen::logger::log("error", eMsg);
 					if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
-					{
-						std::cout << construct_error("Log file or folder is write protected!") << std::endl;
 						rCode = logErr;
-					}
 					else if(logErr == ERR_FILE_CORRUPT)
-					{
-						std::cout << construct_error("Log file is corrupt!") << std::endl;
 						rCode = logErr;
-					}
 	
 					// Invalid argument is fairly reason to end process with error return code output
 					break;
@@ -332,15 +284,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 
 					int logErr = mapgen::logger::log("error", eMsg);
 					if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
-					{
-						std::cout << construct_error("Log file or folder is write protected!") << std::endl;
 						rCode = logErr;
-					}
 					else if(logErr == ERR_FILE_CORRUPT)
-					{
-						std::cout << construct_error("Log file is corrupt!") << std::endl;
 						rCode = logErr;
-					}
 				}
 			}
 
@@ -361,15 +307,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 
 				int logErr = mapgen::logger::log("error", eMsg);
 				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
-				{
-					std::cout << construct_error("Log file or folder is write protected!") << std::endl;
 					rCode = logErr;
-				}
 				else if(logErr == ERR_FILE_CORRUPT)
-				{
-					std::cout << construct_error("Log file is corrupt!") << std::endl;
 					rCode = logErr;
-				}
 
 				// Invalid argument is fairly reason to end process with error return code output
 				break;
@@ -385,15 +325,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 
 				int logErr = mapgen::logger::log("error", eMsg);
 				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
-				{
-					std::cout << construct_error("Log file or folder is write protected!") << std::endl;
 					rCode = logErr;
-				}
 				else if(logErr == ERR_FILE_CORRUPT)
-				{
-					std::cout << construct_error("Log file is corrupted") << std::endl;
 					rCode = logErr;
-				}
 			}
 
 			// Enable verbose switch
@@ -410,15 +344,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 
 				int logErr = mapgen::logger::log("error", eMsg);
 				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
-				{
-					std::cout << construct_error("Log file or folder is write protected!") << std::endl;
 					rCode = logErr;
-				}
 				else if(logErr == ERR_FILE_CORRUPT)
-				{
-					std::cout << construct_error("Log file is corrupted") << std::endl;
 					rCode = logErr;
-				}
 			}
 
 			// Enable footer switch and pass argument to resolve footer file name
@@ -436,15 +364,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 
 				int logErr = mapgen::logger::log("error", eMsg);
 				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
-				{
-					std::cout << construct_error("Log file or folder is write protected!") << std::endl;
 					rCode = logErr;
-				}
 				else if(logErr == ERR_FILE_CORRUPT)
-				{
-					std::cout << construct_error("Log file is corrupted") << std::endl;
 					rCode = logErr;
-				}
 			}
 
 			// Enable footer switch and pass argument to resolve footer file name
@@ -468,15 +390,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 
 				int logErr = mapgen::logger::log("error", eMsg);
 				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
-				{
-					std::cout << construct_error("Log file or folder is write protected!") << std::endl;
 					rCode = logErr;
-				}
 				else if(logErr == ERR_FILE_CORRUPT)
-				{
-					std::cout << construct_error("Log file is corrupt!") << std::endl;
 					rCode = logErr;
-				}
 
 				// Invalid argument is fairly reason to end process with error return code output
 				break;
@@ -517,15 +433,9 @@ std::string mapgen::arghandler::argSw_resolve(int rCode, int aType, bool argL, c
 
 			int logErr = mapgen::logger::log("error", eMsg);
 			if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
-			{
-				std::cout << construct_error("Log file or folder is write protected!") << std::endl;
 				rCode = logErr;
-			}
 			else if(logErr == ERR_FILE_CORRUPT)
-			{
-				std::cout << construct_error("Log file is corrupt!") << std::endl;
 				rCode = logErr;
-			}
 		}
 		break;
 	case SW_LANG:
@@ -546,15 +456,9 @@ std::string mapgen::arghandler::argSw_resolve(int rCode, int aType, bool argL, c
 
 			int logErr = mapgen::logger::log("error", eMsg);
 			if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
-			{
-				std::cout << construct_error("Log file or folder is write protected!") << std::endl;
 				rCode = logErr;
-			}
 			else if(logErr == ERR_FILE_CORRUPT)
-			{
-				std::cout << construct_error("Log file is corrupt!") << std::endl;
 				rCode = logErr;
-			}
 		}
 		break;
 	case SW_CAPTION:
@@ -575,15 +479,9 @@ std::string mapgen::arghandler::argSw_resolve(int rCode, int aType, bool argL, c
 
 			int logErr = mapgen::logger::log("error", eMsg);
 			if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
-			{
-				std::cout << construct_error("Log file or folder is write protected!") << std::endl;
 				rCode = logErr;
-			}
 			else if(logErr == ERR_FILE_CORRUPT)
-			{
-				std::cout << construct_error("Log file is corrupt!") << std::endl;
 				rCode = logErr;
-			}
 		}
 		break;
 	case SW_HELP:
@@ -604,15 +502,9 @@ std::string mapgen::arghandler::argSw_resolve(int rCode, int aType, bool argL, c
 
 			int logErr = mapgen::logger::log("error", eMsg);
 			if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
-			{
-				std::cout << construct_error("Log file or folder is write protected!") << std::endl;
 				rCode = logErr;
-			}
 			else if(logErr == ERR_FILE_CORRUPT)
-			{
-				std::cout << construct_error("Log file is corrupt!") << std::endl;
 				rCode = logErr;
-			}
 		}
 		break;
 	case SW_VERBOSE:
@@ -633,15 +525,9 @@ std::string mapgen::arghandler::argSw_resolve(int rCode, int aType, bool argL, c
 
 			int logErr = mapgen::logger::log("error", eMsg);
 			if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
-			{
-				std::cout << construct_error("Log file or folder is write protected!") << std::endl;
 				rCode = logErr;
-			}
 			else if(logErr == ERR_FILE_CORRUPT)
-			{
-				std::cout << construct_error("Log file is corrupt!") << std::endl;
 				rCode = logErr;
-			}
 		}
 		break;
 	case SW_FOOTER:
@@ -662,13 +548,8 @@ std::string mapgen::arghandler::argSw_resolve(int rCode, int aType, bool argL, c
 
 			int logErr = mapgen::logger::log("error", eMsg);
 			if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
-			{
-				std::cout << construct_error("Log file or folder is write protected!") << std::endl;
 				rCode = logErr;
-			}
 			else if(logErr == ERR_FILE_CORRUPT)
-			{
-				std::cout << construct_error("Log file is corrupt!") << std::endl;
 				rCode = logErr;
 			}
 		}
@@ -687,15 +568,9 @@ std::string mapgen::arghandler::argSw_resolve(int rCode, int aType, bool argL, c
 
 			int logErr = mapgen::logger::log("error", eMsg);
 			if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
-			{
-				std::cout << construct_error("Log file or folder is write protected!") << std::endl;
 				rCode = logErr;
-			}
 			else if(logErr == ERR_FILE_CORRUPT)
-			{
-				std::cout << construct_error("Log file is corrupt!") << std::endl;
 				rCode = logErr;
-			}
 		}
 	}
 

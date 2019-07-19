@@ -14,16 +14,32 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <ctime>
+#include <errno.h>
 
 #include "errcodes.h"
+#include "commands.h"
 #include "logger.h"
 
 int mapgen::logger::log(std::string lFname, std::string lMsg)
 {
 	int rCode = 0;
 
-	// TODO => log into file '<lFname>.log'
-	// [YYYY-MM-DD HH:MM:SS.xxx] <lMsg>
+	std::string lFullFname = lFname + ".log";
+
+	time_t raw;
+	time(&raw);
+
+	struct tm *tInfo;
+	char buff[80];
+
+	timeinfo = localtime(&raw);
+	strftime(buff, sizeof(buff), "%Y-%m-%d %H:%M:%S", tInfo);
+
+	std::string now(buff);
+	// [YYYY-MM-DD HH:MM:SS] <lMsg>
+
+	// TODO: write into log file
 
 	return rCode;
 }
