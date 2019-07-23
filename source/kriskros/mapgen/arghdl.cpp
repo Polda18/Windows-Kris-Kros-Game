@@ -113,9 +113,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 				std::cout << eMsg << std::endl;
 
 				int logErr = mapgen::logger::log("error", eMsg);
-				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+				if(logErr == ERR_WRITE_PROTECTED)
 					rCode = logErr;
-				else if(logErr == ERR_FILE_CORRUPT)
+				else if(logErr == ERR_FILE_DAMAGED)
 					rCode = logErr;
 			}
 
@@ -134,9 +134,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 				std::cout << eMsg << std::endl;
 
 				int logErr = mapgen::logger::log("error", eMsg);
-				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+				if(logErr == ERR_WRITE_PROTECTED)
 					rCode = logErr;
-				else if(logErr == ERR_FILE_CORRUPT)
+				else if(logErr == ERR_FILE_DAMAGED)
 					rCode = logErr;
 			}
 
@@ -154,9 +154,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 				std::cout << eMsg << std::endl;
 
 				int logErr = mapgen::logger::log("error", eMsg);
-				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+				if(logErr == ERR_WRITE_PROTECTED)
 					rCode = logErr;
-				else if(logErr == ERR_FILE_CORRUPT)
+				else if(logErr == ERR_FILE_DAMAGED)
 					rCode = logErr;
 			}
 
@@ -174,9 +174,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 				std::cout << eMsg << std::endl;
 
 				int logErr = mapgen::logger::log("error", eMsg);
-				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+				if(logErr == ERR_WRITE_PROTECTED)
 					rCode = logErr;
-				else if(logErr == ERR_FILE_CORRUPT)
+				else if(logErr == ERR_FILE_DAMAGED)
 					rCode = logErr;
 			}
 
@@ -194,9 +194,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 				std::cout << eMsg << std::endl;
 
 				int logErr = mapgen::logger::log("error", eMsg);
-				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+				if(logErr == ERR_WRITE_PROTECTED)
 					rCode = logErr;
-				else if(logErr == ERR_FILE_CORRUPT)
+				else if(logErr == ERR_FILE_DAMAGED)
 					rCode = logErr;
 			}
 
@@ -214,9 +214,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 				std::cout << eMsg << std::endl;
 
 				int logErr = mapgen::logger::log("error", eMsg);
-				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+				if(logErr == ERR_WRITE_PROTECTED)
 					rCode = logErr;
-				else if(logErr == ERR_FILE_CORRUPT)
+				else if(logErr == ERR_FILE_DAMAGED)
 					rCode = logErr;
 			}
 
@@ -237,9 +237,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 				std::cout << eMsg << std::endl;
 
 				int logErr = mapgen::logger::log("error", eMsg);
-				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+				if(logErr == ERR_WRITE_PROTECTED)
 					rCode = logErr;
-				else if(logErr == ERR_FILE_CORRUPT)
+				else if(logErr == ERR_FILE_DAMAGED)
 					rCode = logErr;
 
 				// Invalid argument is fairly reason to end process with error return code output
@@ -265,9 +265,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 					std::cout << eMsg << std::endl;
 
 					int logErr = mapgen::logger::log("error", eMsg);
-					if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+					if(logErr == ERR_WRITE_PROTECTED)
 						rCode = logErr;
-					else if(logErr == ERR_FILE_CORRUPT)
+					else if(logErr == ERR_FILE_DAMAGED)
 						rCode = logErr;
 	
 					// Invalid argument is fairly reason to end process with error return code output
@@ -283,9 +283,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 					std::cout << eMsg << std::endl;
 
 					int logErr = mapgen::logger::log("error", eMsg);
-					if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+					if(logErr == ERR_WRITE_PROTECTED)
 						rCode = logErr;
-					else if(logErr == ERR_FILE_CORRUPT)
+					else if(logErr == ERR_FILE_DAMAGED)
 						rCode = logErr;
 				}
 			}
@@ -306,9 +306,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 				std::cout << eMsg << std::endl;
 
 				int logErr = mapgen::logger::log("error", eMsg);
-				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+				if(logErr == ERR_WRITE_PROTECTED)
 					rCode = logErr;
-				else if(logErr == ERR_FILE_CORRUPT)
+				else if(logErr == ERR_FILE_DAMAGED)
 					rCode = logErr;
 
 				// Invalid argument is fairly reason to end process with error return code output
@@ -324,9 +324,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 				std::cout << eMsg << std::endl;
 
 				int logErr = mapgen::logger::log("error", eMsg);
-				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+				if(logErr == ERR_WRITE_PROTECTED)
 					rCode = logErr;
-				else if(logErr == ERR_FILE_CORRUPT)
+				else if(logErr == ERR_FILE_DAMAGED)
 					rCode = logErr;
 			}
 
@@ -343,9 +343,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 				std::cout << eMsg << std::endl;
 
 				int logErr = mapgen::logger::log("error", eMsg);
-				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+				if(logErr == ERR_WRITE_PROTECTED)
 					rCode = logErr;
-				else if(logErr == ERR_FILE_CORRUPT)
+				else if(logErr == ERR_FILE_DAMAGED)
 					rCode = logErr;
 			}
 
@@ -363,9 +363,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 				std::cout << eMsg << std::endl;
 
 				int logErr = mapgen::logger::log("error", eMsg);
-				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+				if(logErr == ERR_WRITE_PROTECTED)
 					rCode = logErr;
-				else if(logErr == ERR_FILE_CORRUPT)
+				else if(logErr == ERR_FILE_DAMAGED)
 					rCode = logErr;
 			}
 
@@ -389,9 +389,9 @@ int mapgen::arghandler::handle_args(int argc, char **argv,
 				std::cout << eMsg << std::endl;
 
 				int logErr = mapgen::logger::log("error", eMsg);
-				if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+				if(logErr == ERR_WRITE_PROTECTED)
 					rCode = logErr;
-				else if(logErr == ERR_FILE_CORRUPT)
+				else if(logErr == ERR_FILE_DAMAGED)
 					rCode = logErr;
 
 				// Invalid argument is fairly reason to end process with error return code output
@@ -432,9 +432,9 @@ std::string mapgen::arghandler::argSw_resolve(int rCode, int aType, bool argL, c
 			std::cout << eMsg << std::endl;
 
 			int logErr = mapgen::logger::log("error", eMsg);
-			if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+			if(logErr == ERR_WRITE_PROTECTED)
 				rCode = logErr;
-			else if(logErr == ERR_FILE_CORRUPT)
+			else if(logErr == ERR_FILE_DAMAGED)
 				rCode = logErr;
 		}
 		break;
@@ -455,9 +455,9 @@ std::string mapgen::arghandler::argSw_resolve(int rCode, int aType, bool argL, c
 			std::cout << eMsg << std::endl;
 
 			int logErr = mapgen::logger::log("error", eMsg);
-			if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+			if(logErr == ERR_WRITE_PROTECTED)
 				rCode = logErr;
-			else if(logErr == ERR_FILE_CORRUPT)
+			else if(logErr == ERR_FILE_DAMAGED)
 				rCode = logErr;
 		}
 		break;
@@ -478,9 +478,9 @@ std::string mapgen::arghandler::argSw_resolve(int rCode, int aType, bool argL, c
 			std::cout << eMsg << std::endl;
 
 			int logErr = mapgen::logger::log("error", eMsg);
-			if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+			if(logErr == ERR_WRITE_PROTECTED)
 				rCode = logErr;
-			else if(logErr == ERR_FILE_CORRUPT)
+			else if(logErr == ERR_FILE_DAMAGED)
 				rCode = logErr;
 		}
 		break;
@@ -501,9 +501,9 @@ std::string mapgen::arghandler::argSw_resolve(int rCode, int aType, bool argL, c
 			std::cout << eMsg << std::endl;
 
 			int logErr = mapgen::logger::log("error", eMsg);
-			if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+			if(logErr == ERR_WRITE_PROTECTED)
 				rCode = logErr;
-			else if(logErr == ERR_FILE_CORRUPT)
+			else if(logErr == ERR_FILE_DAMAGED)
 				rCode = logErr;
 		}
 		break;
@@ -524,9 +524,9 @@ std::string mapgen::arghandler::argSw_resolve(int rCode, int aType, bool argL, c
 			std::cout << eMsg << std::endl;
 
 			int logErr = mapgen::logger::log("error", eMsg);
-			if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+			if(logErr == ERR_WRITE_PROTECTED)
 				rCode = logErr;
-			else if(logErr == ERR_FILE_CORRUPT)
+			else if(logErr == ERR_FILE_DAMAGED)
 				rCode = logErr;
 		}
 		break;
@@ -547,11 +547,10 @@ std::string mapgen::arghandler::argSw_resolve(int rCode, int aType, bool argL, c
 			std::cout << eMsg << std::endl;
 
 			int logErr = mapgen::logger::log("error", eMsg);
-			if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+			if(logErr == ERR_WRITE_PROTECTED)
 				rCode = logErr;
-			else if(logErr == ERR_FILE_CORRUPT)
+			else if(logErr == ERR_FILE_DAMAGED)
 				rCode = logErr;
-			}
 		}
 		break;
 	default:
@@ -567,9 +566,9 @@ std::string mapgen::arghandler::argSw_resolve(int rCode, int aType, bool argL, c
 			std::cout << eMsg << std::endl;
 
 			int logErr = mapgen::logger::log("error", eMsg);
-			if(logErr == ERR_FILE_WRITE_PROTECTED || logErr == ERR_FOLDER_WRITE_PROTECTED)
+			if(logErr == ERR_WRITE_PROTECTED)
 				rCode = logErr;
-			else if(logErr == ERR_FILE_CORRUPT)
+			else if(logErr == ERR_FILE_DAMAGED)
 				rCode = logErr;
 		}
 	}

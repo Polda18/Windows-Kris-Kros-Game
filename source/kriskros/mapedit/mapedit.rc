@@ -46,6 +46,18 @@ END
 
 #endif    // APSTUDIO_INVOKED
 
+#endif    // Czech resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
 
 #ifndef _MAC
 /////////////////////////////////////////////////////////////////////////////
@@ -216,7 +228,7 @@ BEGIN
     DEFPUSHBUTTON   "OK",IDOK,134,52,50,14
     ICON            MAINICON,IDC_ICONDISP,13,12,20,20,SS_SUNKEN
     LTEXT           "Kris-Kros Map Editor, v1.0",IDC_PRODUCTNAME,42,12,82,8
-    LTEXT           "Made by Marek Pol·Ëek (@Polda18)",IDC_DEVELOPER,42,24,
+    LTEXT           "Made by Marek Pol·cek (@Polda18)",IDC_DEVELOPER,42,24,
                     118,8
     CONTROL         "Freeware, Open-source (GNU-GPL v3.0)",IDC_LICENCE,
                     "Static",SS_LEFTNOWORDWRAP | WS_GROUP,42,35,129,8
@@ -241,7 +253,7 @@ BEGIN
 END
 #endif    // APSTUDIO_INVOKED
 
-#endif    // Czech resources
+#endif    // English (U.K.) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

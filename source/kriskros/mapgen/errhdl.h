@@ -2,7 +2,7 @@
  * Kris-Kros Game Kit
  *----------------------------------
  * Kris-Kros Map Generator source
- * File: logger.h
+ * File: errhdl.h
  *
  * Made by Marek Pol·Ëek
  * Github.com/Polda18
@@ -11,17 +11,14 @@
  * 2019
  ***********************************/
 
-#include <fstream>
-#include <string>
-
-#ifndef LOGGER_H
-#define LOGGER_H
+#ifndef ERRHDL_H
+#define ERRHDL_H
 
 namespace mapgen
 {
-	namespace logger
+	namespace error_handler
 	{
-		int log(std::string lFname, std::string lMsg);
+		int handle_io_errors(int fType, int fOp);
 	}
 }
 

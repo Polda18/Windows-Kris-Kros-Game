@@ -15,10 +15,12 @@
 #include <fstream>
 #include <string>
 #include <ctime>
-#include <errno.h>
+#include <cerrno>
 
 #include "errcodes.h"
 #include "commands.h"
+#include "ftypes.h"
+#include "errhdl.h"
 #include "logger.h"
 
 int mapgen::logger::log(std::string lFname, std::string lMsg)
@@ -33,13 +35,30 @@ int mapgen::logger::log(std::string lFname, std::string lMsg)
 	struct tm *tInfo;
 	char buff[80];
 
-	timeinfo = localtime(&raw);
+	tInfo = localtime(&raw);
 	strftime(buff, sizeof(buff), "%Y-%m-%d %H:%M:%S", tInfo);
 
 	std::string now(buff);
-	// [YYYY-MM-DD HH:MM:SS] <lMsg>
 
-	// TODO: write into log file
+	std::ofstream lFile;
+	lFile.open(lFullFname.c_str(), std::ofstream::app | std::ofstream::out);
+
+	if(lFile.fail() || !lFile.is_open())
+	{
+		rCode = mapgen::error_handler::handle_io_errors(FILE_TYPE_LOG, FILE_READ);
+	}
+
+	if(rCode == 0)
+		lFile << "[" << now << "] " << lMsg << std::endl;
+		// [YYYY-MM-DD HH:MM:SS] <lMsg>
+
+	if(rCode == 0 && lFile.fail())
+	{
+		rCode = mapgen::error_handler::handle_io_errors(FILE_TYPE_LOG, FILE_WRITE);
+	}
+
+	if(lFile.is_open())
+		lFile.close();
 
 	return rCode;
 }
