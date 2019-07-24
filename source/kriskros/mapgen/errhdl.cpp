@@ -21,7 +21,7 @@
 #include "ftypes.h"
 #include "errhdl.h"
 
-int mapgen::error_handler::handle_io_errors(int fType, int fOp)
+int mapgen::error_handler::handle_io_errors(int fType, int fOp, std::ofstream lFile = NULL)
 {
 	int rCode = 0;
 
@@ -139,8 +139,13 @@ int mapgen::error_handler::handle_io_errors(int fType, int fOp)
 			default:
 				// Anything else failed? Unexpected error
 				rCode = ERR_UNEXPECTED;
-				std::cerr << construct_error("Unexpected error! Please contact developer\nPolda18 @GitHub.com") << std::endl;
+				std::cerr << construct_error("Unexpected error! Please contact developer:\ngithub.com/Polda18/Windows-Kris-Kros-Game/issues") << std::endl;
 			}
+			break;
+		default:
+			// This is invalid statement!
+			rCode = ERR_UNEXPECTED;
+			std::cerr << construct_error("Internal error! Please contact developer:\ngithub.com/Polda18/Windows-Kris-Kros-Game/issues") << std::endl;
 		}
 		break;
 	case FILE_TYPE_BIN:
@@ -153,6 +158,10 @@ int mapgen::error_handler::handle_io_errors(int fType, int fOp)
 		case FILE_WRITE:
 			//todo switch(errno)
 			break;
+		default:
+			// This is invalid statement!
+			rCode = ERR_UNEXPECTED;
+			std::cerr << construct_error("Internal error! Please contact developer:\ngithub.com/Polda18/Windows-Kris-Kros-Game/issues") << std::endl;
 		}
 		break;
 	case FILE_TYPE_TXT:
@@ -165,7 +174,16 @@ int mapgen::error_handler::handle_io_errors(int fType, int fOp)
 		case FILE_WRITE:
 			//todo switch(errno)
 			break;
+		default:
+			// This is invalid statement!
+			rCode = ERR_UNEXPECTED;
+			std::cerr << construct_error("Internal error! Please contact developer:\ngithub.com/Polda18/Windows-Kris-Kros-Game/issues") << std::endl;
 		}
+		break;
+	default:
+		// This is invalid statement!
+		rCode = ERR_UNEXPECTED;
+		std::cerr << construct_error("Internal error! Please contact developer:\ngithub.com/Polda18/Windows-Kris-Kros-Game/issues") << std::endl;
 	}
 
 	return rCode;

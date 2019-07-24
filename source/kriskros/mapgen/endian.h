@@ -2,7 +2,7 @@
  * Kris-Kros Game Kit
  *----------------------------------
  * Kris-Kros Map Generator source
- * File: errhdl.h
+ * File: endian.h
  *
  * Made by Marek Pol·Ëek
  * Github.com/Polda18
@@ -11,17 +11,14 @@
  * 2019
  ***********************************/
 
-#include <fstream>
+#include <climits>
 
-#ifndef ERRHDL_H
-#define ERRHDL_H
+#ifndef ENDIAN_H
+#define ENDIAN_H
 
-namespace mapgen
-{
-	namespace error_handler
-	{
-		int handle_io_errors(int fType, int fOp, std::ofstream lFile = NULL);
-	}
-}
+template <typename T>
+
+bool is_big_endian(void);
+T swap_endian(T u);
 
 #endif

@@ -30,6 +30,7 @@
 #define ERR_DISK_FULL                  14
 #define ERR_PERMISSION_DENIED          15
 #define ERR_INTERRUPTED                16
+#define ERR_UNEXPECTED_EOF             17
 // Next error codes based on requests
 
 #define ERR_UNEXPECTED               99

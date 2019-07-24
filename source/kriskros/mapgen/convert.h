@@ -46,9 +46,11 @@ namespace mapgen
 			std::string capFname,
 			std::string ftFname,
 			std::string lang);
-		int parse_pcx(std::ifstream inFile, bool *fail);
-		int write_map(std::ofstream outFile, bool *fail,
-			int mIdx, map_pos_t *map_pos, std::string *content);
+		int parse_pcx(std::ifstream inFile, std::ofstream outFile, std::ofstream lFile,
+			std::string inFname, std::string outFname,
+			bool v, bool o, bool c, bool f, bool l, bool *fail);
+		int write_map(std::ofstream outFile, std::string *content,
+			bool v, bool o, bool c, bool f, bool l, bool *fail);
 	}
 }
 
