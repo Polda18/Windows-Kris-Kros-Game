@@ -6,10 +6,15 @@
 #define MAINICON                        102
 #define FILEICON                        103
 #define IDD_ABOUTBOX                    104
+#define IDC_CURSOR_SELECT               106
+#define IDC_CURSOR_SELDRAG              107
+#define IDC_CURSOR_DRAG                 108
+#define IDC_CURSOR_COPY                 110
 #define IDC_ICONDISP                    1000
 #define IDC_PRODUCTNAME                 1001
 #define IDC_DEVELOPER                   1002
 #define IDC_LICENCE                     1003
+#define IDC_GITHUBLINK                  1006
 #define ID_FILE_NEW_FROMSCRATCH         40001
 #define ID_FILE_NEW_FROMPCXFILE         40002
 #define ID_FILE_SAVEAS                  40005
@@ -40,9 +45,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        105
+#define _APS_NEXT_RESOURCE_VALUE        116
 #define _APS_NEXT_COMMAND_VALUE         40034
-#define _APS_NEXT_CONTROL_VALUE         1004
+#define _APS_NEXT_CONTROL_VALUE         1007
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

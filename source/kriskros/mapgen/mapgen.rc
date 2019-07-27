@@ -46,18 +46,6 @@ END
 
 #endif    // APSTUDIO_INVOKED
 
-#endif    // Czech resources
-/////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////
-// English (U.K.) resources
-
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
-#ifdef _WIN32
-LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
-#pragma code_page(1252)
-#endif //_WIN32
 
 #ifndef _MAC
 /////////////////////////////////////////////////////////////////////////////
@@ -80,7 +68,7 @@ VS_VERSION_INFO VERSIONINFO
 BEGIN
     BLOCK "StringFileInfo"
     BEGIN
-        BLOCK "080904b0"
+        BLOCK "080904e4"
         BEGIN
             VALUE "Comments", "Map console generator for Kris-Kros game\0"
             VALUE "CompanyName", "Marek Pol·Ëek (@Polda18)\0"
@@ -98,7 +86,7 @@ BEGIN
     END
     BLOCK "VarFileInfo"
     BEGIN
-        VALUE "Translation", 0x809, 1200
+        VALUE "Translation", 0x809, 1252
     END
 END
 
@@ -112,8 +100,8 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-MAINICON                ICON    DISCARDABLE     "Mapgen.ico"
-#endif    // English (U.K.) resources
+MAINICON                ICON    DISCARDABLE     "../_global/mapgen.ico"
+#endif    // Czech resources
 /////////////////////////////////////////////////////////////////////////////
 
 

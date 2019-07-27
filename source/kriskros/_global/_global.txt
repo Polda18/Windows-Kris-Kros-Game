@@ -3,6 +3,12 @@ mapidx.h
 ftypes.h
 errhdl.h
 endian.h
+errcodes.h
 
 errhdl.cpp
 endian.cpp
+
+kriskros.ico
+mapedit.ico
+mapfile.ico
+mapgen.ico

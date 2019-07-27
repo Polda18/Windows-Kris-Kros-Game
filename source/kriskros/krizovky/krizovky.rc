@@ -68,7 +68,7 @@ VS_VERSION_INFO VERSIONINFO
 BEGIN
     BLOCK "StringFileInfo"
     BEGIN
-        BLOCK "040504b0"
+        BLOCK "040504e2"
         BEGIN
             VALUE "Comments", "Hra køížovek\0"
             VALUE "CompanyName", "Marek Poláèek (@Polda18)\0"
@@ -86,7 +86,7 @@ BEGIN
     END
     BLOCK "VarFileInfo"
     BEGIN
-        VALUE "Translation", 0x405, 1200
+        VALUE "Translation", 0x405, 1250
     END
 END
 
@@ -136,7 +136,7 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-MAINICON                ICON    DISCARDABLE     "Kriskros.ico"
+MAINICON                ICON    DISCARDABLE     "../_global/kriskros.ico"
 #endif    // Czech resources
 /////////////////////////////////////////////////////////////////////////////
 
